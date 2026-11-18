@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop the Fall Limited Edition Sneakers from Sneaker Company.">
+  <title>Sneaker Company | Fall Limited Edition Sneakers</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+          <img src="images/icon-menu.svg" alt="">
+        </button>
+        <a class="brand" href="#" aria-label="Sneaker Company home">
+          <img src="images/logo.svg" alt="sneakers">
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#product">Collections</a>
+          <a href="#product">Men</a>
+          <a href="#product">Women</a>
+          <a href="#product">About</a>
+          <a href="#product">Contact</a>
+        </nav>
+      </div>
+
+      <div class="header-actions">
+        <div class="cart-wrapper">
+          <button class="icon-button cart-toggle" id="cart-toggle" type="button" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cart-panel">
+            <img src="images/icon-cart.svg" alt="">
+            <span class="cart-count" id="cart-count" hidden>0</span>
+          </button>
+          <div class="cart-panel" id="cart-panel" aria-label="Shopping cart" hidden>
+            <h2 class="cart-heading">Cart</h2>
+            <div class="cart-content" id="cart-content">
+              <p class="empty-cart">Your cart is empty.</p>
+            </div>
+          </div>
+        </div>
+        <div class="avatar-button" aria-hidden="true">
+          <img src="images/image-avatar.png" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop" hidden></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true" inert>
+    <button class="icon-button mobile-menu-close" id="menu-close" type="button" aria-label="Close navigation">
+      <img src="images/icon-close.svg" alt="">
+    </button>
+    <a href="#product">Collections</a>
+    <a href="#product">Men</a>
+    <a href="#product">Women</a>
+    <a href="#product">About</a>
+    <a href="#product">Contact</a>
+  </nav>
+
+  <main class="product-layout" id="product">
+    <section class="gallery" aria-label="Product images">
+      <div class="main-image-wrap">
+        <button class="main-image-button" id="main-image-button" type="button" aria-label="Open product image gallery">
+          <img class="main-image" id="main-image" src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
+        </button>
+        <button class="gallery-arrow gallery-arrow--previous" id="mobile-previous" type="button" aria-label="Previous product image">
+          <img src="images/icon-previous.svg" alt="">
+        </button>
+        <button class="gallery-arrow gallery-arrow--next" id="mobile-next" type="button" aria-label="Next product image">
+          <img src="images/icon-next.svg" alt="">
+        </button>
+      </div>
+      <div class="thumbnail-list" id="thumbnail-list" aria-label="Choose a product image">
+        <button class="thumbnail is-active" type="button" data-image="0" aria-label="View product image 1" aria-pressed="true">
+          <img src="images/image-product-1-thumbnail.jpg" alt="">
+        </button>
+        <button class="thumbnail" type="button" data-image="1" aria-label="View product image 2" aria-pressed="false">
+          <img src="images/image-product-2-thumbnail.jpg" alt="">
+        </button>
+        <button class="thumbnail" type="button" data-image="2" aria-label="View product image 3" aria-pressed="false">
+          <img src="images/image-product-3-thumbnail.jpg" alt="">
+        </button>
+        <button class="thumbnail" type="button" data-image="3" aria-label="View product image 4" aria-pressed="false">
+          <img src="images/image-product-4-thumbnail.jpg" alt="">
+        </button>
+      </div>
+    </section>
+
+    <section class="product-info" aria-labelledby="product-title">
+      <p class="eyebrow">Sneaker Company</p>
+      <h1 id="product-title">Fall Limited Edition Sneakers</h1>
+      <p class="product-description">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+
+      <div class="price-block">
+        <div class="current-price-row">
+          <p class="current-price">$125.00</p>
+          <span class="discount">50%</span>
+        </div>
+        <p class="original-price"><del>$250.00</del></p>
+      </div>
+
+      <div class="purchase-controls">
+        <div class="quantity-control" aria-label="Quantity selector">
+          <button class="quantity-button" id="quantity-decrease" type="button" aria-label="Decrease quantity">
+            <img src="images/icon-minus.svg" alt="">
+          </button>
+          <output class="quantity-value" id="quantity-value" aria-live="polite">0</output>
+          <button class="quantity-button" id="quantity-increase" type="button" aria-label="Increase quantity">
+            <img src="images/icon-plus.svg" alt="">
+          </button>
+        </div>
+        <button class="add-to-cart" id="add-to-cart" type="button">
+          <img src="images/icon-cart.svg" alt="">
+          <span>Add to cart</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image gallery" hidden>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image gallery">
+        <img src="images/icon-close.svg" alt="">
+      </button>
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-image" id="lightbox-image" src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
+        <button class="gallery-arrow lightbox-previous" id="lightbox-previous" type="button" aria-label="Previous product image">
+          <img src="images/icon-previous.svg" alt="">
+        </button>
+        <button class="gallery-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Next product image">
+          <img src="images/icon-next.svg" alt="">
+        </button>
+      </div>
+      <div class="thumbnail-list lightbox-thumbnails" id="lightbox-thumbnails" aria-label="Choose a product image">
+        <button class="thumbnail is-active" type="button" data-image="0" aria-label="View product image 1" aria-pressed="true"><img src="images/image-product-1-thumbnail.jpg" alt=""></button>
+        <button class="thumbnail" type="button" data-image="1" aria-label="View product image 2" aria-pressed="false"><img src="images/image-product-2-thumbnail.jpg" alt=""></button>
+        <button class="thumbnail" type="button" data-image="2" aria-label="View product image 3" aria-pressed="false"><img src="images/image-product-3-thumbnail.jpg" alt=""></button>
+        <button class="thumbnail" type="button" data-image="3" aria-label="View product image 4" aria-pressed="false"><img src="images/image-product-4-thumbnail.jpg" alt=""></button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
